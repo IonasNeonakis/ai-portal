@@ -35,12 +35,12 @@ export const apps: AppData[] = [
     {
         name: "Aiclicker",
         description: "Clicker game for developers",
-        link: "https://aiclicker.olivierabdelnour.dev",
+        link: "https://clickertech.olivierabdelnour.dev",
     },
     {
         name: "Developers Escape",
         description: "Escape game for developers",
-        link: "https://escapegale.olivierabdelnour.dev",
+        link: "https://escapegame.olivierabdelnour.dev",
     },
     {
         name: "HN Digest",
