@@ -15,6 +15,8 @@ const AppCard: React.FC<AppCardProps> = ({ app }) => {
             .slice(0, 2);
     };
 
+    const isDownload = app.link.endsWith('.zip');
+
     const CardContent = (
         <div className={`p-6 h-full flex flex-col items-center text-center transition-all duration-300 ${app.isDisabled ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:scale-105 hover:shadow-xl dark:hover:shadow-2xl'}`}>
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold mb-4 shadow-md">
@@ -28,7 +30,7 @@ const AppCard: React.FC<AppCardProps> = ({ app }) => {
             </p>
             {!app.isDisabled ? (
                 <span className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
-                    Visit App
+                    {isDownload ? 'Download App' : 'Visit App'}
                 </span>
             ) : (
                 <span className="inline-block bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-4 py-2 rounded-lg text-sm font-medium">
@@ -49,8 +51,9 @@ const AppCard: React.FC<AppCardProps> = ({ app }) => {
     return (
         <a
             href={app.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={isDownload ? undefined : "_blank"}
+            rel={isDownload ? undefined : "noopener noreferrer"}
+            download={isDownload}
             className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden block"
         >
             {CardContent}

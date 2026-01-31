@@ -9,8 +9,7 @@ export const apps: AppData[] = [
     {
         name: "GitLab MR Review Quizz",
         description: "Chrome Web extension that launches a quiz when someone clicks on approve",
-        link: "#",
-        isDisabled: true,
+        link: "/review.zip",
     },
     {
         name: "One Tera",
